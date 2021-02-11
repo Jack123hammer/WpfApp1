@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6ddbead668ba4265acab52fd40dbaab4" Name="Diagram1">
+        <EntityTypeShape EntityType="Test1Model.Checking" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Test1Model.Coating" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Test1Model.Drying" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Test1Model.Employee" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Test1Model.Goods" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Test1Model.Material" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Test1Model.Order" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Test1Model.Parts" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Test1Model.Products" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Test1Model.Realisation" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Test1Model.Supplier" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Test1Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Test1Model.Workshop" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="Test1Model.FK_Checking_Goods" ManuallyRouted="false" />
+        <AssociationConnector Association="Test1Model.FK_Checking_Parts" ManuallyRouted="false" />
+        <AssociationConnector Association="Test1Model.FK_Checking_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="Test1Model.FK_Coating_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="Test1Model.FK_Drying_Goods" ManuallyRouted="false" />
+        <AssociationConnector Association="Test1Model.FK_Order_Products" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Test1Model.Build" Width="1.5" PointX="6.875" PointY="15" />
+        <AssociationConnector Association="Test1Model.FK_Build_Goods" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

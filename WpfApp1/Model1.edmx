@@ -1,0 +1,757 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище Test1Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Build">
+          <Key>
+            <PropertyRef Name="Number_of_build" />
+          </Key>
+          <Property Name="Number_of_build" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Number_of_district_build" Type="int" />
+          <Property Name="Name_of_goods_build" Type="int" />
+          <Property Name="Name_of_hardware" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name_of_furniture" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quantity_of_hardware" Type="int" />
+          <Property Name="Quantity_of_furniture" Type="int" />
+        </EntityType>
+        <EntityType Name="Checking">
+          <Key>
+            <PropertyRef Name="Number_of_checking" />
+          </Key>
+          <Property Name="Number_of_checking" Type="int" Nullable="false" />
+          <Property Name="Part_of_checking" Type="int" />
+          <Property Name="Goods_of_checking" Type="int" />
+          <Property Name="Products_of_checking" Type="int" />
+          <Property Name="GOST_of_checking" Type="int" />
+        </EntityType>
+        <EntityType Name="Coating">
+          <Key>
+            <PropertyRef Name="id_coating" />
+          </Key>
+          <Property Name="id_coating" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Number_of_district_coating" Type="int" />
+          <Property Name="Name_of_product_coating" Type="int" />
+          <Property Name="Quantity_of_coating" Type="int" />
+        </EntityType>
+        <EntityType Name="Drying">
+          <Key>
+            <PropertyRef Name="Number_of_district_drying" />
+          </Key>
+          <Property Name="Number_of_district_drying" Type="int" Nullable="false" />
+          <Property Name="Name_of_goods_drying" Type="int" />
+          <Property Name="Quantity_of_drying" Type="int" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Number_of_employee" />
+          </Key>
+          <Property Name="Number_of_employee" Type="int" Nullable="false" />
+          <Property Name="Employee_last_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Employee_first_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Employee_second_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Employee_date_of_birth" Type="date" />
+          <Property Name="Employee_passport" Type="nvarchar" MaxLength="50" />
+          <Property Name="Employee_address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Employee_telephone" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Goods">
+          <Key>
+            <PropertyRef Name="id_goods" />
+          </Key>
+          <Property Name="id_goods" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_of_goods" Type="nvarchar" MaxLength="50" />
+          <Property Name="Number_of_district_goods" Type="int" />
+          <Property Name="Size_of_goods" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quantity_of_goods" Type="int" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="id_material" />
+          </Key>
+          <Property Name="id_material" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_of_material" Type="nvarchar" MaxLength="50" />
+          <Property Name="Units_of_measure" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quantity_of_material" Type="int" />
+          <Property Name="Warranty_of_material" Type="date" />
+          <Property Name="Cost_of_material" Type="int" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Number_of_order" />
+          </Key>
+          <Property Name="Number_of_order" Type="int" Nullable="false" />
+          <Property Name="Name_of_production_order" Type="int" />
+          <Property Name="Quantity_of_order" Type="int" />
+          <Property Name="Date_of_order" Type="date" />
+        </EntityType>
+        <EntityType Name="Parts">
+          <Key>
+            <PropertyRef Name="id_part" />
+          </Key>
+          <Property Name="id_part" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_of_part" Type="nvarchar" MaxLength="50" />
+          <Property Name="Size_of_part" Type="nvarchar" MaxLength="50" />
+          <Property Name="Number_of_district_part" Type="int" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="id_prod" />
+          </Key>
+          <Property Name="id_prod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_prod" Type="nvarchar" MaxLength="50" />
+          <Property Name="Number_prod" Type="int" />
+          <Property Name="Cost_prod" Type="int" />
+          <Property Name="Warranty_prod" Type="int" />
+          <Property Name="Amount_prod" Type="int" />
+        </EntityType>
+        <EntityType Name="Realisation">
+          <Key>
+            <PropertyRef Name="Number_of_realisation" />
+          </Key>
+          <Property Name="Number_of_realisation" Type="int" Nullable="false" />
+          <Property Name="Volume_of_realisation" Type="int" />
+          <Property Name="Date_of_realisation" Type="datetime" />
+          <Property Name="Type_of_realisation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Number_of_issue_realisation" Type="int" />
+          <Property Name="Unit_of_price_realisation" Type="int" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="id_supplier" />
+          </Key>
+          <Property Name="id_supplier" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Volume_of_supply" Type="int" />
+          <Property Name="Date_of_supply" Type="datetime" />
+          <Property Name="Name_of_supply" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name_of_supplier" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Workshop">
+          <Key>
+            <PropertyRef Name="id_workshop" />
+          </Key>
+          <Property Name="id_workshop" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_workshop" Type="nvarchar" MaxLength="50" />
+          <Property Name="Number_of_district_workshop" Type="int" />
+          <Property Name="Code_of_equipment_workshop" Type="int" />
+        </EntityType>
+        <Association Name="FK_Build_Goods">
+          <End Role="Goods" Type="Self.Goods" Multiplicity="0..1" />
+          <End Role="Build" Type="Self.Build" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goods">
+              <PropertyRef Name="id_goods" />
+            </Principal>
+            <Dependent Role="Build">
+              <PropertyRef Name="Name_of_goods_build" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Checking_Goods">
+          <End Role="Goods" Type="Self.Goods" Multiplicity="0..1" />
+          <End Role="Checking" Type="Self.Checking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goods">
+              <PropertyRef Name="id_goods" />
+            </Principal>
+            <Dependent Role="Checking">
+              <PropertyRef Name="Goods_of_checking" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Checking_Parts">
+          <End Role="Parts" Type="Self.Parts" Multiplicity="0..1" />
+          <End Role="Checking" Type="Self.Checking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parts">
+              <PropertyRef Name="id_part" />
+            </Principal>
+            <Dependent Role="Checking">
+              <PropertyRef Name="Part_of_checking" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Checking_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="Checking" Type="Self.Checking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="id_prod" />
+            </Principal>
+            <Dependent Role="Checking">
+              <PropertyRef Name="Products_of_checking" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Coating_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="Coating" Type="Self.Coating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="id_prod" />
+            </Principal>
+            <Dependent Role="Coating">
+              <PropertyRef Name="Name_of_product_coating" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Drying_Goods">
+          <End Role="Goods" Type="Self.Goods" Multiplicity="0..1" />
+          <End Role="Drying" Type="Self.Drying" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goods">
+              <PropertyRef Name="id_goods" />
+            </Principal>
+            <Dependent Role="Drying">
+              <PropertyRef Name="Name_of_goods_drying" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="id_prod" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="Name_of_production_order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище Test1ModelContainer">
+          <EntitySet Name="Build" EntityType="Self.Build" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Checking" EntityType="Self.Checking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Coating" EntityType="Self.Coating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Drying" EntityType="Self.Drying" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Goods" EntityType="Self.Goods" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Parts" EntityType="Self.Parts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Realisation" EntityType="Self.Realisation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Workshop" EntityType="Self.Workshop" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Build_Goods" Association="Self.FK_Build_Goods">
+            <End Role="Goods" EntitySet="Goods" />
+            <End Role="Build" EntitySet="Build" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Checking_Goods" Association="Self.FK_Checking_Goods">
+            <End Role="Goods" EntitySet="Goods" />
+            <End Role="Checking" EntitySet="Checking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Checking_Parts" Association="Self.FK_Checking_Parts">
+            <End Role="Parts" EntitySet="Parts" />
+            <End Role="Checking" EntitySet="Checking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Checking_Products" Association="Self.FK_Checking_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Checking" EntitySet="Checking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Coating_Products" Association="Self.FK_Coating_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Coating" EntitySet="Coating" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Drying_Goods" Association="Self.FK_Drying_Goods">
+            <End Role="Goods" EntitySet="Goods" />
+            <End Role="Drying" EntitySet="Drying" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Products" Association="Self.FK_Order_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Test1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Checking">
+          <Key>
+            <PropertyRef Name="Number_of_checking" />
+          </Key>
+          <Property Name="Number_of_checking" Type="Int32" Nullable="false" />
+          <Property Name="Part_of_checking" Type="Int32" />
+          <Property Name="Goods_of_checking" Type="Int32" />
+          <Property Name="Products_of_checking" Type="Int32" />
+          <Property Name="GOST_of_checking" Type="Int32" />
+          <NavigationProperty Name="Goods" Relationship="Self.FK_Checking_Goods" FromRole="Checking" ToRole="Goods" />
+          <NavigationProperty Name="Parts" Relationship="Self.FK_Checking_Parts" FromRole="Checking" ToRole="Parts" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Checking_Products" FromRole="Checking" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Coating">
+          <Key>
+            <PropertyRef Name="id_coating" />
+          </Key>
+          <Property Name="id_coating" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number_of_district_coating" Type="Int32" />
+          <Property Name="Name_of_product_coating" Type="Int32" />
+          <Property Name="Quantity_of_coating" Type="Int32" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Coating_Products" FromRole="Coating" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Drying">
+          <Key>
+            <PropertyRef Name="Number_of_district_drying" />
+          </Key>
+          <Property Name="Number_of_district_drying" Type="Int32" Nullable="false" />
+          <Property Name="Name_of_goods_drying" Type="Int32" />
+          <Property Name="Quantity_of_drying" Type="Int32" />
+          <NavigationProperty Name="Goods" Relationship="Self.FK_Drying_Goods" FromRole="Drying" ToRole="Goods" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Number_of_employee" />
+          </Key>
+          <Property Name="Number_of_employee" Type="Int32" Nullable="false" />
+          <Property Name="Employee_last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Employee_first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Employee_second_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Employee_date_of_birth" Type="DateTime" Precision="0" />
+          <Property Name="Employee_passport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Employee_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Employee_telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Goods">
+          <Key>
+            <PropertyRef Name="id_goods" />
+          </Key>
+          <Property Name="id_goods" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_of_goods" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Number_of_district_goods" Type="Int32" />
+          <Property Name="Size_of_goods" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity_of_goods" Type="Int32" />
+          <NavigationProperty Name="Checking" Relationship="Self.FK_Checking_Goods" FromRole="Goods" ToRole="Checking" />
+          <NavigationProperty Name="Drying" Relationship="Self.FK_Drying_Goods" FromRole="Goods" ToRole="Drying" />
+          <NavigationProperty Name="Build" Relationship="Test1Model.FK_Build_Goods" FromRole="Goods" ToRole="Build" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="id_material" />
+          </Key>
+          <Property Name="id_material" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_of_material" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Units_of_measure" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity_of_material" Type="Int32" />
+          <Property Name="Warranty_of_material" Type="DateTime" Precision="0" />
+          <Property Name="Cost_of_material" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Number_of_order" />
+          </Key>
+          <Property Name="Number_of_order" Type="Int32" Nullable="false" />
+          <Property Name="Name_of_production_order" Type="Int32" />
+          <Property Name="Quantity_of_order" Type="Int32" />
+          <Property Name="Date_of_order" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Order_Products" FromRole="Order" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Parts">
+          <Key>
+            <PropertyRef Name="id_part" />
+          </Key>
+          <Property Name="id_part" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_of_part" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Size_of_part" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Number_of_district_part" Type="Int32" />
+          <NavigationProperty Name="Checking" Relationship="Self.FK_Checking_Parts" FromRole="Parts" ToRole="Checking" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="id_prod" />
+          </Key>
+          <Property Name="id_prod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_prod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Number_prod" Type="Int32" />
+          <Property Name="Cost_prod" Type="Int32" />
+          <Property Name="Warranty_prod" Type="Int32" />
+          <Property Name="Amount_prod" Type="Int32" />
+          <NavigationProperty Name="Checking" Relationship="Self.FK_Checking_Products" FromRole="Products" ToRole="Checking" />
+          <NavigationProperty Name="Coating" Relationship="Self.FK_Coating_Products" FromRole="Products" ToRole="Coating" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_Order_Products" FromRole="Products" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Realisation">
+          <Key>
+            <PropertyRef Name="Number_of_realisation" />
+          </Key>
+          <Property Name="Number_of_realisation" Type="Int32" Nullable="false" />
+          <Property Name="Volume_of_realisation" Type="Int32" />
+          <Property Name="Date_of_realisation" Type="DateTime" Precision="3" />
+          <Property Name="Type_of_realisation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Number_of_issue_realisation" Type="Int32" />
+          <Property Name="Unit_of_price_realisation" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="id_supplier" />
+          </Key>
+          <Property Name="id_supplier" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Volume_of_supply" Type="Int32" />
+          <Property Name="Date_of_supply" Type="DateTime" Precision="3" />
+          <Property Name="Name_of_supply" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name_of_supplier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Workshop">
+          <Key>
+            <PropertyRef Name="id_workshop" />
+          </Key>
+          <Property Name="id_workshop" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_workshop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Number_of_district_workshop" Type="Int32" />
+          <Property Name="Code_of_equipment_workshop" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_Checking_Goods">
+          <End Role="Goods" Type="Self.Goods" Multiplicity="0..1" />
+          <End Role="Checking" Type="Self.Checking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goods">
+              <PropertyRef Name="id_goods" />
+            </Principal>
+            <Dependent Role="Checking">
+              <PropertyRef Name="Goods_of_checking" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Checking_Parts">
+          <End Role="Parts" Type="Self.Parts" Multiplicity="0..1" />
+          <End Role="Checking" Type="Self.Checking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parts">
+              <PropertyRef Name="id_part" />
+            </Principal>
+            <Dependent Role="Checking">
+              <PropertyRef Name="Part_of_checking" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Checking_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="Checking" Type="Self.Checking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="id_prod" />
+            </Principal>
+            <Dependent Role="Checking">
+              <PropertyRef Name="Products_of_checking" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Coating_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="Coating" Type="Self.Coating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="id_prod" />
+            </Principal>
+            <Dependent Role="Coating">
+              <PropertyRef Name="Name_of_product_coating" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Drying_Goods">
+          <End Role="Goods" Type="Self.Goods" Multiplicity="0..1" />
+          <End Role="Drying" Type="Self.Drying" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goods">
+              <PropertyRef Name="id_goods" />
+            </Principal>
+            <Dependent Role="Drying">
+              <PropertyRef Name="Name_of_goods_drying" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="id_prod" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="Name_of_production_order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Test1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Checking" EntityType="Self.Checking" />
+          <EntitySet Name="Coating" EntityType="Self.Coating" />
+          <EntitySet Name="Drying" EntityType="Self.Drying" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+          <EntitySet Name="Goods" EntityType="Self.Goods" />
+          <EntitySet Name="Material" EntityType="Self.Material" />
+          <EntitySet Name="Order" EntityType="Self.Order" />
+          <EntitySet Name="Parts" EntityType="Self.Parts" />
+          <EntitySet Name="Products" EntityType="Self.Products" />
+          <EntitySet Name="Realisation" EntityType="Self.Realisation" />
+          <EntitySet Name="Supplier" EntityType="Self.Supplier" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Workshop" EntityType="Self.Workshop" />
+          <AssociationSet Name="FK_Checking_Goods" Association="Self.FK_Checking_Goods">
+            <End Role="Goods" EntitySet="Goods" />
+            <End Role="Checking" EntitySet="Checking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Checking_Parts" Association="Self.FK_Checking_Parts">
+            <End Role="Parts" EntitySet="Parts" />
+            <End Role="Checking" EntitySet="Checking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Checking_Products" Association="Self.FK_Checking_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Checking" EntitySet="Checking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Coating_Products" Association="Self.FK_Coating_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Coating" EntitySet="Coating" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Drying_Goods" Association="Self.FK_Drying_Goods">
+            <End Role="Goods" EntitySet="Goods" />
+            <End Role="Drying" EntitySet="Drying" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Products" Association="Self.FK_Order_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <EntitySet Name="Build" EntityType="Test1Model.Build" />
+          <AssociationSet Name="FK_Build_Goods" Association="Test1Model.FK_Build_Goods">
+            <End Role="Goods" EntitySet="Goods" />
+            <End Role="Build" EntitySet="Build" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Build">
+          <Key>
+            <PropertyRef Name="Number_of_build" />
+          </Key>
+          <Property Name="Number_of_build" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number_of_district_build" Type="Int32" />
+          <Property Name="Name_of_goods_build" Type="Int32" />
+          <Property Name="Name_of_hardware" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name_of_furniture" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity_of_hardware" Type="Int32" />
+          <Property Name="Quantity_of_furniture" Type="Int32" />
+          <NavigationProperty Name="Goods" Relationship="Test1Model.FK_Build_Goods" FromRole="Build" ToRole="Goods" />
+        </EntityType>
+        <Association Name="FK_Build_Goods">
+          <End Type="Test1Model.Goods" Role="Goods" Multiplicity="0..1" />
+          <End Type="Test1Model.Build" Role="Build" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goods">
+              <PropertyRef Name="id_goods" />
+            </Principal>
+            <Dependent Role="Build">
+              <PropertyRef Name="Name_of_goods_build" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Test1ModelContainer" CdmEntityContainer="Test1Entities">
+          <EntitySetMapping Name="Checking">
+            <EntityTypeMapping TypeName="Test1Model.Checking">
+              <MappingFragment StoreEntitySet="Checking">
+                <ScalarProperty Name="Number_of_checking" ColumnName="Number_of_checking" />
+                <ScalarProperty Name="Part_of_checking" ColumnName="Part_of_checking" />
+                <ScalarProperty Name="Goods_of_checking" ColumnName="Goods_of_checking" />
+                <ScalarProperty Name="Products_of_checking" ColumnName="Products_of_checking" />
+                <ScalarProperty Name="GOST_of_checking" ColumnName="GOST_of_checking" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Coating">
+            <EntityTypeMapping TypeName="Test1Model.Coating">
+              <MappingFragment StoreEntitySet="Coating">
+                <ScalarProperty Name="id_coating" ColumnName="id_coating" />
+                <ScalarProperty Name="Number_of_district_coating" ColumnName="Number_of_district_coating" />
+                <ScalarProperty Name="Name_of_product_coating" ColumnName="Name_of_product_coating" />
+                <ScalarProperty Name="Quantity_of_coating" ColumnName="Quantity_of_coating" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drying">
+            <EntityTypeMapping TypeName="Test1Model.Drying">
+              <MappingFragment StoreEntitySet="Drying">
+                <ScalarProperty Name="Number_of_district_drying" ColumnName="Number_of_district_drying" />
+                <ScalarProperty Name="Name_of_goods_drying" ColumnName="Name_of_goods_drying" />
+                <ScalarProperty Name="Quantity_of_drying" ColumnName="Quantity_of_drying" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="Test1Model.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="Number_of_employee" ColumnName="Number_of_employee" />
+                <ScalarProperty Name="Employee_last_name" ColumnName="Employee_last_name" />
+                <ScalarProperty Name="Employee_first_name" ColumnName="Employee_first_name" />
+                <ScalarProperty Name="Employee_second_name" ColumnName="Employee_second_name" />
+                <ScalarProperty Name="Employee_date_of_birth" ColumnName="Employee_date_of_birth" />
+                <ScalarProperty Name="Employee_passport" ColumnName="Employee_passport" />
+                <ScalarProperty Name="Employee_address" ColumnName="Employee_address" />
+                <ScalarProperty Name="Employee_telephone" ColumnName="Employee_telephone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Goods">
+            <EntityTypeMapping TypeName="Test1Model.Goods">
+              <MappingFragment StoreEntitySet="Goods">
+                <ScalarProperty Name="id_goods" ColumnName="id_goods" />
+                <ScalarProperty Name="Name_of_goods" ColumnName="Name_of_goods" />
+                <ScalarProperty Name="Number_of_district_goods" ColumnName="Number_of_district_goods" />
+                <ScalarProperty Name="Size_of_goods" ColumnName="Size_of_goods" />
+                <ScalarProperty Name="Quantity_of_goods" ColumnName="Quantity_of_goods" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Material">
+            <EntityTypeMapping TypeName="Test1Model.Material">
+              <MappingFragment StoreEntitySet="Material">
+                <ScalarProperty Name="id_material" ColumnName="id_material" />
+                <ScalarProperty Name="Name_of_material" ColumnName="Name_of_material" />
+                <ScalarProperty Name="Units_of_measure" ColumnName="Units_of_measure" />
+                <ScalarProperty Name="Quantity_of_material" ColumnName="Quantity_of_material" />
+                <ScalarProperty Name="Warranty_of_material" ColumnName="Warranty_of_material" />
+                <ScalarProperty Name="Cost_of_material" ColumnName="Cost_of_material" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order">
+            <EntityTypeMapping TypeName="Test1Model.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="Number_of_order" ColumnName="Number_of_order" />
+                <ScalarProperty Name="Name_of_production_order" ColumnName="Name_of_production_order" />
+                <ScalarProperty Name="Quantity_of_order" ColumnName="Quantity_of_order" />
+                <ScalarProperty Name="Date_of_order" ColumnName="Date_of_order" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parts">
+            <EntityTypeMapping TypeName="Test1Model.Parts">
+              <MappingFragment StoreEntitySet="Parts">
+                <ScalarProperty Name="id_part" ColumnName="id_part" />
+                <ScalarProperty Name="Name_of_part" ColumnName="Name_of_part" />
+                <ScalarProperty Name="Size_of_part" ColumnName="Size_of_part" />
+                <ScalarProperty Name="Number_of_district_part" ColumnName="Number_of_district_part" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="Test1Model.Products">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="id_prod" ColumnName="id_prod" />
+                <ScalarProperty Name="Name_prod" ColumnName="Name_prod" />
+                <ScalarProperty Name="Number_prod" ColumnName="Number_prod" />
+                <ScalarProperty Name="Cost_prod" ColumnName="Cost_prod" />
+                <ScalarProperty Name="Warranty_prod" ColumnName="Warranty_prod" />
+                <ScalarProperty Name="Amount_prod" ColumnName="Amount_prod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Realisation">
+            <EntityTypeMapping TypeName="Test1Model.Realisation">
+              <MappingFragment StoreEntitySet="Realisation">
+                <ScalarProperty Name="Number_of_realisation" ColumnName="Number_of_realisation" />
+                <ScalarProperty Name="Volume_of_realisation" ColumnName="Volume_of_realisation" />
+                <ScalarProperty Name="Date_of_realisation" ColumnName="Date_of_realisation" />
+                <ScalarProperty Name="Type_of_realisation" ColumnName="Type_of_realisation" />
+                <ScalarProperty Name="Number_of_issue_realisation" ColumnName="Number_of_issue_realisation" />
+                <ScalarProperty Name="Unit_of_price_realisation" ColumnName="Unit_of_price_realisation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Supplier">
+            <EntityTypeMapping TypeName="Test1Model.Supplier">
+              <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="id_supplier" ColumnName="id_supplier" />
+                <ScalarProperty Name="Volume_of_supply" ColumnName="Volume_of_supply" />
+                <ScalarProperty Name="Date_of_supply" ColumnName="Date_of_supply" />
+                <ScalarProperty Name="Name_of_supply" ColumnName="Name_of_supply" />
+                <ScalarProperty Name="Name_of_supplier" ColumnName="Name_of_supplier" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Test1Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Workshop">
+            <EntityTypeMapping TypeName="Test1Model.Workshop">
+              <MappingFragment StoreEntitySet="Workshop">
+                <ScalarProperty Name="id_workshop" ColumnName="id_workshop" />
+                <ScalarProperty Name="Name_workshop" ColumnName="Name_workshop" />
+                <ScalarProperty Name="Number_of_district_workshop" ColumnName="Number_of_district_workshop" />
+                <ScalarProperty Name="Code_of_equipment_workshop" ColumnName="Code_of_equipment_workshop" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Build">
+            <EntityTypeMapping TypeName="Test1Model.Build">
+              <MappingFragment StoreEntitySet="Build">
+                <ScalarProperty Name="Quantity_of_furniture" ColumnName="Quantity_of_furniture" />
+                <ScalarProperty Name="Quantity_of_hardware" ColumnName="Quantity_of_hardware" />
+                <ScalarProperty Name="Name_of_furniture" ColumnName="Name_of_furniture" />
+                <ScalarProperty Name="Name_of_hardware" ColumnName="Name_of_hardware" />
+                <ScalarProperty Name="Name_of_goods_build" ColumnName="Name_of_goods_build" />
+                <ScalarProperty Name="Number_of_district_build" ColumnName="Number_of_district_build" />
+                <ScalarProperty Name="Number_of_build" ColumnName="Number_of_build" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
